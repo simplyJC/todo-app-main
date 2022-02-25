@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="dist/main.css" />
+    <script src="/app/js/main.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"
+      defer
+    ></script>
+
+    <title>Frontend Mentor | Todo app</title>
+  </head>
+  <body data-theme="">
+    <main>
+      <div class="todo__header-container">
+        <div class="todo__header">
+          <h1 class="todo__title">TODO</h1>
+          <a class="todo__toggle" href="#"
+            ><img
+              class="todo__toggle-image"
+              src="/images/icon-sun.svg"
+              alt="toggle button"
+          /></a>
+        </div>
+        <div class="todo__input-container">
+          <form class="todo__input" action="" data-new-task-form>
+            <button class="todo__button-input"></button>
+            <input
+              type="text"
+              class="todo__input--text"
+              data-new-task-input
+              placeholder="Create a new Todo"
+              aria-label="new todo"
+            />
+          </form>
+        </div>
+      </div>
+
+      <div class="todo__list-container">
+        <div class="empty-state"><p>Please add a new todo list</p></div>
+        <div class="todo__tasks" id="sortable"></div>
+        <div class="todo__bottom-info">
+          <span class="todo__items-left-mobile" data-task-remaining>
+            No Tasks</span
+          >
+          <button class="todo__button-completed-mobile" data-clear-completed>
+            Clear Completed
+          </button>
+        </div>
+        <div class="todo__footer">
+          <span class="todo__items-left-desktop" data-task-remaining
+            >No Tasks</span
+          >
+          <button data-all-button>All</button>
+          <button data-active-button>Active</button>
+          <button data-completed-button>Completed</button>
+          <button class="todo__button-completed-desktop" data-clear-completed>
+            Clear Completed
+          </button>
+        </div>
+
+        <span class="todo__tips">Drag and Drop to reorder list</span>
+      </div>
+    </main>
+    <footer>
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">Jaycee</a>.
+      </div>
+    </footer>
+  </body>
+</html>
