@@ -122,7 +122,9 @@ function render(listsFilter) {
           <img src="/images/icon-cross.svg" alt="delete button " />
         </button>
     `;
-    item.classList.add('todo__task');
+    item.classList.add('todo__task', 'draggable');
+    //Set Draggable
+    item.setAttribute('draggable', true);
     item.dataset.listId = list.id;
     tasks.appendChild(item);
     itemTaskCount();
@@ -170,8 +172,54 @@ function clearTasks(element) {
   }
 }
 
-$(function () {
-  $('#sortable').sortable();
-});
+// $(function () {
+//   $('#sortable').sortable();
+// });
 
 render(lists);
+
+//Draggable Function
+
+const draggables = document.querySelectorAll('.draggable');
+draggables.forEach((draggable) => {
+  draggable.addEventListener('dragstart', () => {
+    draggable.classList.add('dragging');
+  });
+
+  draggable.addEventListener('dragend', () => {
+    draggable.classList.remove('dragging');
+  });
+});
+
+tasks.addEventListener('dragover', (e) => {
+  e.preventDefault();
+  const afterElement = getDragAfterElement(tasks, e.clientY);
+  const draggable = document.querySelector('.dragging');
+
+  if (afterElement == null) {
+    tasks.appendChild(draggable);
+  } else {
+    tasks.insertBefore(draggable, afterElement);
+  }
+  
+});
+
+function getDragAfterElement(tasks, y) {
+  const draggableElements = [
+    ...tasks.querySelectorAll('.draggable:not(.dragging)'),
+  ];
+
+  return draggableElements.reduce(
+    (closest, child) => {
+      const box = child.getBoundingClientRect();
+      const offset = y - box.top - box.height / 2;
+
+      if (offset < 0 && offset > closest.offset) {
+        return { offset: offset, element: child };
+      } else {
+        return closest;
+      }
+    },
+    { offset: Number.NEGATIVE_INFINITY }
+  ).element;
+}

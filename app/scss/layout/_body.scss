@@ -52,7 +52,7 @@ body[data-theme='light'] .todo__header-container {
   }
 }
 
-.ui-sortable{
+.ui-sortable {
   position: relative;
   top: 0;
   right: 0;
@@ -67,6 +67,7 @@ body[data-theme='light'] .todo__header-container {
   display: block;
 }
 
+//todo Styles
 .todo {
   &__header-container {
     background: url('/images/bg-mobile-dark.jpg') no-repeat;
@@ -159,7 +160,7 @@ body[data-theme='light'] .todo__header-container {
     border-bottom: 1px solid var(--clr-border-color);
     background: var(--clr-todo-background);
     color: var(--clr-todo-text);
-    cursor: pointer;
+    cursor: move;
     &--active {
       color: aqua;
     }
@@ -290,6 +291,12 @@ body[data-theme='light'] .todo__header-container {
     padding: 2rem 0;
     color: var(--clr-bottom-text);
   }
+}
+
+//Draggable
+
+ .dragging {
+  opacity: 0.5;
 }
 
 //Footer

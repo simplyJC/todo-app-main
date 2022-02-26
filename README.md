@@ -71,10 +71,8 @@ I am still a beginner in Javascript. There is still a lot to learn. I am looking
 - [https://freshman.tech/todo-list/](https://freshman.tech/todo-list/) - This help me to better understand how adding and removing tasks. 
 - [How to Code A Better To-Do List - Tutorial](https://www.youtube.com/watch?v=W7FaYfuwu70&t=1121s) - This is an amazing tutorial from WebDev which showing how you can save a tasks in local storage. This is somehow different but I just studied it and learn how things worked. 
 - [Jquery Sortable](https://jqueryui.com/sortable/) - It will help you out in reordering tasks with a few javascript code. 
-
 - [How To Create Dark Theme Switcher For Website Using CSS and JS](https://www.youtube.com/watch?v=D1yg4T37qYo) - One of the best tutorial in changing Theme.
-
-- [Todo App FrontEndMentor by Quang Phan](https://www.frontendmentor.io/solutions/todo-app-Z3uvRFUqu)- I refer to this  Todo App on how he manage to reorder task. 
+- [How To Build Sortable Drag & Drop With Vanilla Javascript](https://www.youtube.com/watch?v=jfYWwQrtzzY&t=4s) - This is the best tutorial for drag and drop but the reduce and Math part is hard to understand.  
 
 
 

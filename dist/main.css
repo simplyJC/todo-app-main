@@ -229,7 +229,7 @@ body[data-theme=light] .todo__header-container {
   border-bottom: 1px solid var(--clr-border-color);
   background: var(--clr-todo-background);
   color: var(--clr-todo-text);
-  cursor: pointer;
+  cursor: move;
 }
 .todo__task--active {
   color: aqua;
@@ -353,6 +353,10 @@ body[data-theme=light] .todo__header-container {
   display: block;
   padding: 2rem 0;
   color: var(--clr-bottom-text);
+}
+
+.dragging {
+  opacity: 0.5;
 }
 
 .attribution {
