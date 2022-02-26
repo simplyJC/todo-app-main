@@ -124,7 +124,7 @@ body[data-theme='light'] .todo__header-container {
     }
   }
   &__input--text {
-    width: 80%;
+    max-width: 80%;
     background: var(--clr-todo-background);
     border-style: none;
     color: var(--clr-todo-text);

@@ -193,7 +193,7 @@ body[data-theme=light] .todo__header-container {
   font-size: 0.9rem;
 }
 .todo__input--text {
-  width: 80%;
+  max-width: 80%;
   background: var(--clr-todo-background);
   border-style: none;
   color: var(--clr-todo-text);

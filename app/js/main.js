@@ -2,24 +2,31 @@
 const toggle = document.querySelector('.todo__toggle');
 const theme = document.querySelector('[data-theme]');
 const toggleIcon = document.querySelector('.todo__toggle-image');
+const LOCAL_STORAGE_THEME_KEY = 'task.theme';
+let currentTheme = JSON.parse(localStorage.getItem(LOCAL_STORAGE_THEME_KEY));
 
 toggle.addEventListener('click', () => {
   if (theme.getAttribute('data-theme') === 'light') {
     theme.setAttribute('data-theme', 'dark');
     toggleIcon.src = '/images/icon-sun.svg';
+    currentTheme = 'dark';
+    localStorage.setItem(LOCAL_STORAGE_THEME_KEY, JSON.stringify(currentTheme));
   } else {
     theme.setAttribute('data-theme', 'light');
     toggleIcon.src = '/images/icon-moon.svg';
+    currentTheme = 'light';
+    localStorage.setItem(LOCAL_STORAGE_THEME_KEY, JSON.stringify(currentTheme));
   }
 });
+
 //initialize theme
 function setTheme() {
-  const darkThemeMq = window.matchMedia('(prefers-color-scheme: dark)');
-  if (darkThemeMq.matches) {
+  if (currentTheme === 'dark') {
     // Theme set to dark.
     theme.setAttribute('data-theme', 'dark');
   } else {
     // Theme set to light.
+    theme.setAttribute('data-theme', 'light');
   }
 }
 setTheme();
@@ -163,9 +170,6 @@ function clearTasks(element) {
   }
 }
 
-$(function () {
-  $('#sortable').sortable();
-});
 $(function () {
   $('#sortable').sortable();
 });
